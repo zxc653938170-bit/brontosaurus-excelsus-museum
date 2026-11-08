@@ -4527,7 +4527,7 @@
       // 优先本地中文语音，避免沙箱 iframe 卡在云端 TTS 端点
       const localZh = zhVoices.filter(v => v.localService);
       const pool = localZh.length ? localZh : zhVoices;
-      const priority = [/Yunyang/i, /Yunjian/i, /Yunxi/i, /Xiaoxiao/i, /Ting-Ting/i, /Mei-Jia/i, /Sin-ji/i, /Natural/i, /Neural/i, /Google.*普通话/i, /zh-CN/i];
+      const priority = [/Yunyang/i, /Yunjian/i, /Yunxi/i, /Xiaoxiao/i, /Ting-Ting/i, /Mei-Jia/i, /Sin-ji/i, /Natural/i, /Neural/i, /普通话/i, /zh-CN/i];
       for (const rx of priority) {
         const match = pool.find(v => rx.test(v.name) || rx.test(v.lang));
         if (match) return match;
